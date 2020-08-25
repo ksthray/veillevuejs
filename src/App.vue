@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <customHeader title="les apprenants de la KDA" />
+    <customHeader
+      title="les apprenants de la KDA"
+      desc="ils sont les meilleurs dev junior du monde"
+    />
     <customSection />
   </div>
 </template>
@@ -8,6 +11,7 @@
 <script>
 import Header from "./components/header";
 import Section from "./components/section";
+
 export default {
   name: "App",
   components: {

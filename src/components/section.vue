@@ -19,16 +19,20 @@
         <h2>Section</h2>
         <div class="row">
           <div class="col-md-6">
-            <h4>Dev Frontend</h4>
+            <h4 v-if="frontend.length > 0">Dev Frontend</h4>
             <div v-for:="item in frontend" style="color: orange;">
               <p v-bind:for="item">{{item}}</p>
+              <br />
             </div>
+            <strong v-if="frontend.length > 0">dans la kda il y a : {{frontend.length}} dev frontend</strong>
           </div>
           <div class="col-md-6">
-            <h4>Dev Backend</h4>
+            <h4 v-if="backend.length > 0">Dev Backend</h4>
             <div v-for:="item in backend" style="color: blue;">
               <p v-bind:for="item">{{item}}</p>
+              <br />
             </div>
+            <strong v-if="backend.length > 0">dans la kda il y a : {{backend.length}} dev backend</strong>
           </div>
         </div>
       </div>
@@ -41,18 +45,44 @@ export default {
   name: "Section",
   data: () => ({
     user: "sarah lisangola",
-    apprenants: ["claude", "sarah", "françois", "ben", "peniel"],
+    apprenants: [
+      "claude",
+      "sarah",
+      "françois",
+      "ben",
+      "peniel",
+      "osée",
+      "murduch",
+      "laurène",
+      "gael",
+      "stani",
+      "joseph",
+      "camille",
+      "kalala",
+      "manzako",
+      "thesy",
+      "semia",
+      "russel",
+      "dieu donnée",
+      "axel",
+    ],
     frontend: [],
     backend: [],
   }),
+  mounted() {
+    (function () {
+      console.log("notre requete ajax");
+    })();
+  },
   methods: {
     devfront: function (apprenant) {
       this.frontend.push(apprenant);
-      console.log(apprenant);
     },
     devback: function (apprenant) {
       this.backend.push(apprenant);
-      console.log(apprenant);
+    },
+    getUrl: function () {
+      console.log("notre requete ajax");
     },
   },
 };
